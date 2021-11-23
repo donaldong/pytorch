@@ -100,8 +100,9 @@ jobs:
     needs: [ciflow_should_run]
     timeout-minutes: 240
     env:
+      TEST_RUNNER_TYPE: macos-10.15
       ENABLE_DISTRIBUTED_TEST: 1
-      NUM_TEST_SHARDS: 2
+      NUM_TEST_SHARDS: 1
       PR_BODY: ${{ github.event.pull_request.body }}
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
